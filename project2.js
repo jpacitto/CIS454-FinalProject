@@ -30,7 +30,7 @@ fillLight.position.set(100,0,100);
 var backLight = new THREE.DirectionalLight(0xffffff, 1.0);
 backLight.position.set(100, 0, -100).normalize();
 
-var ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+var ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
 scene.add(ambientLight);
 ambientLight.position.y = 100;
 
@@ -61,3 +61,17 @@ objLoader.load('res/x-wing/star-wars-x-wing.json', function(object)
 	xwing.position.y = -5;
 	xwing.rotation.y = 3.15;
 });
+
+var tiefigher;
+objLoader.load('res/tiefighter/starwars-tie-fighter.json', function(object){
+	tiefigher = object;
+	tiefigher.scale.set(.5, .5, .5);
+	scene.add(tiefigher);
+});
+
+var asteroid;
+objLoader.load('res/asteroid/asteroid.json', function(object){
+	asteroid = object;
+	asteroid.position.y = 6;
+	scene.add(asteroid);
+})

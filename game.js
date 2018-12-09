@@ -41,6 +41,4 @@ document.addEventListener('keydown', function(event){
 	}else if(event.keyCode == 68 && xwing.position.x < 10.5){
 		xwing.position.x += 0.5;
 	}
-
-	console.log(xwing.position.x.toString() + ", " + xwing.position.y.toString());
-})
+});
