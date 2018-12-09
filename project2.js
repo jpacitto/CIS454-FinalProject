@@ -1,9 +1,10 @@
-var xwing;
+var xwing, tiefigher, asteroid, shrek;
 
 var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-camera.position.z = 10;
+camera.position.z = 20;
+camera.position.y = 6;
 camera.lookAt(scene.position);
 
 var renderer = new THREE.WebGLRenderer();
@@ -56,22 +57,7 @@ var objLoader = new THREE.ObjectLoader();
 objLoader.load('res/x-wing/star-wars-x-wing.json', function(object)
 {
 	xwing = object;
-	scene.add(xwing);
-	xwing.position.z = -10;
-	xwing.position.y = -5;
 	xwing.rotation.y = 3.15;
+	scene.add(xwing);
+	console.log(xwing);
 });
-
-var tiefigher;
-objLoader.load('res/tiefighter/starwars-tie-fighter.json', function(object){
-	tiefigher = object;
-	tiefigher.scale.set(.5, .5, .5);
-	scene.add(tiefigher);
-});
-
-var asteroid;
-objLoader.load('res/asteroid/asteroid.json', function(object){
-	asteroid = object;
-	asteroid.position.y = 6;
-	scene.add(asteroid);
-})
